@@ -8,5 +8,11 @@ public interface CarService {
 
     public List<CarDto> getAllCars();
 
+    CarDto getCar(Integer carId);
+
     void createCar(CarDto car);
+
+    void deleteCar(Integer carId);
+
+    void updateCar(CarDto car, Integer carId);
 }

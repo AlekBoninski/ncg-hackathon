@@ -10,15 +10,19 @@ public class CarConverter {
         entity.setCarId(dto.getId());
         entity.setMake(dto.getMake());
         entity.setModel(dto.getModel());
+        entity.setAvailable(dto.isAvailable() == null ?
+                true : dto.isAvailable());
         entity.setBhp(dto.getBhp());
         return entity;
     }
 
     public static CarDto entityToDto(Car entity) {
-        return new CarDto(
+        CarDto dto = new CarDto(
                 entity.getCarId(),
                 entity.getMake(),
                 entity.getModel(),
                 entity.getBhp());
+        dto.setAvailable(entity.getAvailable());
+        return dto;
     }
 }

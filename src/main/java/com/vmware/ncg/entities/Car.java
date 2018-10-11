@@ -15,6 +15,8 @@ public class Car implements Serializable {
     @Column
     private String model;
     @Column
+    private Boolean available;
+    @Column
     private Integer bhp;
 
     public Integer getCarId() {
@@ -39,6 +41,14 @@ public class Car implements Serializable {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 
     public Integer getBhp() {

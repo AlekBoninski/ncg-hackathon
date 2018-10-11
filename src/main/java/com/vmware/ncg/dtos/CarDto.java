@@ -5,14 +5,16 @@ public class CarDto {
     private Integer id;
     private String make;
     private String model;
-    private int bhp;
+    private Boolean available;
+    private Integer bhp;
 
     public CarDto() {}
 
-    public CarDto(Integer id, String make, String model, int bhp) {
+    public CarDto(Integer id, String make, String model, Integer bhp) {
         this.id = id;
         this.make = make;
         this.model = model;
+        this.available = Boolean.TRUE;
         this.bhp = bhp;
     }
 
@@ -40,11 +42,19 @@ public class CarDto {
         this.model = model;
     }
 
-    public int getBhp() {
+    public Boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
+    }
+
+    public Integer getBhp() {
         return bhp;
     }
 
-    public void setBhp(int bhp) {
+    public void setBhp(Integer bhp) {
         this.bhp = bhp;
     }
 }
