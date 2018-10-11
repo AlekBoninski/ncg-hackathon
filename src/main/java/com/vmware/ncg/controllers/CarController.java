@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping(Constants.CARS_URL)
 @RestController
 public class CarController {
 

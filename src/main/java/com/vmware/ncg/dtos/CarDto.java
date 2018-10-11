@@ -7,6 +7,8 @@ public class CarDto {
     private String model;
     private int bhp;
 
+    public CarDto() {}
+
     public CarDto(Integer id, String make, String model, int bhp) {
         this.id = id;
         this.make = make;
