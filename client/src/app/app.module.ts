@@ -8,6 +8,10 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // <-- NgModel lives here
 
+// import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
+import {HeroService} from './hero.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +20,10 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // <-
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

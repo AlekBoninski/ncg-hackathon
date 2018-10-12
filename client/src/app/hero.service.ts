@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Hero} from './hero';
-import {HEROES} from './mock-heroes';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/internal/Observable';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HeroService {
+  public API = 'http://localhost:8080';
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  getHeroes(): Hero[] {
-    return HEROES;
+  getCars(): Observable<any> {
+    return this.http.get(this.API + '/cars');
   }
 }

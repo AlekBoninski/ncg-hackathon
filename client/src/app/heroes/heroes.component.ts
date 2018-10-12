@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../hero';
+import {Car} from '../car';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -11,15 +11,18 @@ export class HeroesComponent implements OnInit {
 
   selectedHero;
 
-  heroes: Hero[];
+  heroes: Car[];
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.heroService.getCars().subscribe(data => {
+      console.log('gotten data: ' + data)
+      this.heroes = data;
+    });
   }
 
-  onSelect(hero: Hero) {
+  onSelect(hero: Car) {
     this.selectedHero = hero;
   }
 
@@ -27,7 +30,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = null;
   }
 
-  getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
-  }
+  // getHeroes(): void {
+  //   this.heroes = this.heroService.getCars();
+  // }
 }
