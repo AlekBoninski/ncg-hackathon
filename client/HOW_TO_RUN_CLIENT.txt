@@ -6,7 +6,7 @@
 npm install -g @angular/cli
 
 # build the project
-ng install
+npm install
 
 # run client
 ng serve
