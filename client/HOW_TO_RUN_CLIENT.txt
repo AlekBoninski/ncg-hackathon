@@ -1,0 +1,12 @@
+#
+# run all commands in current directory
+#
+
+# install npm
+npm install -g @angular/cli
+
+# build the project
+ng install
+
+# run client
+ng serve
